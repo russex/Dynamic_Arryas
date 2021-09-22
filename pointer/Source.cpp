@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 
 void FillRand(int arr[], const int n);
@@ -16,7 +16,7 @@ void main()
 	int n;
 	int t=0;
 	int a=0;
-	cout << "Ââåäèòå ðàçìåð ìàññèâà"; cin >> n;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð°"; cin >> n;
 	int* arr = new int[n] {};
 	FillRand(arr, n);
 	Print(arr, n);
@@ -27,8 +27,8 @@ void main()
 	int* even = new int[t] {};
 	int* odd = new int[a] {};
 	OddEven(arr, n, even, odd);
-	cout << "Íå÷¸òíûå ýëåìåíòû ìàññèâà: "; Print(odd, a);
-	cout << "×¸òíûå ýëåìåíòû ìàññèâà: "; Print(even, t);
+	cout << "ÐÐµÑ‡Ñ‘Ñ‚Ð½Ñ‹Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð°: "; Print(odd, a);
+	cout << "Ð§Ñ‘Ñ‚Ð½Ñ‹Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð°: "; Print(even, t);
 	delete[] odd;
 	delete[] even;
 #ifdef DEBUG
@@ -36,14 +36,14 @@ void main()
 	FillRand(arr2, n);
 	Print(arr2, n);
 	int value;
-	cout << "Ââåäèòå äîáàâëÿåìîå çíà÷åíèå: "; cin >> value;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: "; cin >> value;
 	PushFront(arr2, n, value);
 	Print(arr2, n);
 	delete[] arr;
 	FillRand(arr2, n);
 	Print(arr2, n);
 	int value2;
-	cout << "Ââåäèòå äîáàâëÿåìîå çíà÷åíèå: "; cin >> value2;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: "; cin >> value2;
 	PushBack(arr2, n, value2);
 	Print(arr2, n);
 	delete[] arr2;
@@ -70,7 +70,7 @@ void OddEven(int arr[], const int n, int even[], int odd[])
 	int o = 0; int d = 0;
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] % 2 == 0 && arr[i] != 0 ? (even[o] = arr[i], o++) : arr[i] == 0 ? d/*Êîñòûëü*/ : (odd[d] = arr[i], d++);
+		arr[i] % 2 == 0 && arr[i] != 0 ? (even[o] = arr[i], o++) : arr[i] == 0 ? d/*ÐšÐ¾ÑÑ‚Ñ‹Ð»ÑŒ*/ : (odd[d] = arr[i], d++);
 	}
 }
 
