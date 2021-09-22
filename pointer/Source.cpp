@@ -10,6 +10,9 @@ void insert(int arr[], int& n, int value, int  it);
 void pop_back(int arr[], int& n);
 void pop_front(int arr[], int& n);
 void erase(int arr[], int& n, int  it);
+
+#define DEBUG
+
 void main()
 {
 	setlocale(LC_ALL, "Rus");
@@ -31,22 +34,20 @@ void main()
 	cout << "Чётные элементы массива: "; Print(even, t);
 	delete[] odd;
 	delete[] even;
+	//delete[] arr;
 #ifdef DEBUG
-	int* arr2 = new int[n] {};
-	FillRand(arr2, n);
-	Print(arr2, n);
+
+	//int* arr2 = new int[n] {};
+	//FillRand(arr, n);
+	Print(arr, n);
 	int value;
 	cout << "Введите добавляемое значение: "; cin >> value;
-	PushFront(arr2, n, value);
-	Print(arr2, n);
+	arr=PushFront(arr, n, value);
+	Print(arr, n);
+	cout << "Введите добавляемое значение: "; cin >> value;
+	arr=PushBack(arr, n, value);
+	Print(arr, n);
 	delete[] arr;
-	FillRand(arr2, n);
-	Print(arr2, n);
-	int value2;
-	cout << "Введите добавляемое значение: "; cin >> value2;
-	PushBack(arr2, n, value2);
-	Print(arr2, n);
-	delete[] arr2;
 #endif // DEBUG
 }
 
@@ -97,6 +98,7 @@ int* PushBack(int arr[], int& n, int& value)
 	delete[] arr;
 	buffer[0] = value;
 	n++;
+	arr = buffer;
 	return arr;
 
 }
